@@ -1,0 +1,84 @@
+.preview {
+    flex-grow: 1;
+    padding: 18px;
+    overflow: scroll;
+    position: relative;
+}
+
+.preview img {
+    position: absolute;
+}
+
+.preview__tags-container {
+    position: absolute;
+}
+.preview__tag {
+    display: inline-block;
+    position: absolute;
+    height: 27px;
+    width: 24px;
+    background: url('../../asserts/tag.png') no-repeat;
+    transform: translate(-50%, -100%);
+    opacity: 0.3;
+    cursor: pointer;
+}
+.preview__tag.highlight {
+    opacity: 1;
+}
+
+.preview__modal {
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -250px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-sizing: border-box;
+    outline: none;
+}
+.preview__modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.preview__textarea {
+    border: 1px solid #dddddd;
+    resize: none;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 75%;
+}
+.preview__textarea.error {
+    border-color: red;
+}
+
+.preview__modal button {
+    border: none;
+    outline: none;
+    background-color: darkcyan;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 3px;
+    box-shadow: 0 3px 0 #006060;
+    position: relative;
+    cursor: pointer;
+}
+.preview__modal button:hover {
+    background-color: #22a2a2;
+}
+.preview__modal button:active {
+    top: 2px;
+    box-shadow: 0 1px 0 #006060;
+}
+.preview__modal button + button {
+    margin-left: 10px;
+}
