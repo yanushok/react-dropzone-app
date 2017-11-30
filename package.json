@@ -1,19 +1,23 @@
 {
-  "name": "softarex",
+  "name": "react-dropzone-app-test",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://yanushok.github.io/react-dropzone-app",
   "dependencies": {
     "classnames": "^2.2.5",
-    "prop-types": "^15.5.10",
+    "gh-pages": "^1.1.0",
+    "prop-types": "^15.6.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-dropzone": "^3.13.2",
-    "react-modal": "^1.7.12"
+    "react-dropzone": "^4.2.3",
+    "react-modal": "^3.1.5"
   },
   "devDependencies": {
-    "react-scripts": "1.0.7"
+    "react-scripts": "1.0.17"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
