@@ -14,11 +14,24 @@ class MainContent extends Component {
     getChildContext = () => ({
         ...this.state,
         onTagAdd: this.handleTagAdd,
+        onTagEdit: this.handleTagEdit,
         onTagHighlight: this.handleTagHighlight
     });
 
     handleFileDroped = file => {
         this.setState({ file, tags: [] });
+    };
+
+    handleTagEdit = (id, text) => {
+        const index = this.state.tags.findIndex(tag => tag.id === id);
+        const tag = this.state.tags[index];
+
+        if (tag) {
+            tag.text = text;
+            this.setState({
+                tags: [...this.state.tags.slice(0, index), tag, ...this.state.tags.slice(index + 1)]
+            });
+        }
     };
 
     handleTagAdd = tag => {
@@ -55,6 +68,7 @@ class MainContent extends Component {
 MainContent.childContextTypes = {
   tags: PropTypes.array,
   onTagAdd: PropTypes.func,
+  onTagEdit: PropTypes.func,
   onTagHighlight: PropTypes.func,
   file: PropTypes.object
 };
